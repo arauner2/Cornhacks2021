@@ -8,22 +8,27 @@
         outline: none;
       }
     </style>
+    <script type="tex/javascript" src = "scores.js"></script>
   </head>
   <body>
-    <!-- <form action="/action_page.php"> -->
       <label for="Options">Customize your page:</label>
       <select name="Color" id="changeColor">
         <option value="#FFFFFF">Default</option>
-        <option value="#000080">Blue</option>
-        <option value="#00FF00">Green</option>
+        <option value="#000080">Default</option>
+
+        <!-- <option value="#000080">Blue</option>
+        <option value="#00FF00">Green</option> -->
       </select>
       <select name="Font" id="changeFont">
         <option value="Helvetica">Helvetica</option>
-        <option value="Calibri">Calibri</option>
-        <option value="Arial">Arial</option>
+        <!-- <option value="Calibri">Calibri</option>
+        <option value="Arial">Arial</option> -->
+      </select>
+      <select name="Image" id="changeImage">
+        <option value="images/alien.png">Alien</option>
+        <option value="images/basketball.png">Basketball</option>
       </select>
       <br><br>
-    <!-- </form> -->
     <script src="popup.js"></script>
     
   </body>
