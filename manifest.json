@@ -7,8 +7,16 @@
     "scripts": ["background.js"],
     "persistent": false
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://classroom.google.com/u/*/w/*/t/all"
+      ],
+      "js": ["popup.js"]
+    }
+  ],
   "options_page": "options.html",
-  "page_action": {
+  "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "images/7663041f-f147-4c63-b805-2441d15077f2_200x200.png",
@@ -23,5 +31,6 @@
     "48": "images/7663041f-f147-4c63-b805-2441d15077f2_200x200.png",
     "128": "images/7663041f-f147-4c63-b805-2441d15077f2_200x200.png"
   },
+  "content_security_policy": "script-src 'self' 'sha256-W72h5RRA/NTb1ZvxENrNsLRS2aOWVRQ9RFyC6XVJXSw='; object-src 'self'",
   "manifest_version": 2
 }
