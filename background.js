@@ -19,5 +19,5 @@ function doStuffWithDom(domContent) {
 
 chrome.browserAction.onClicked.addListener(function (tab) {
   // ...check the URL of the active tab against our pattern and...
-    chrome.tabs.sendMessage(tab.id, {text: 'text'}, doStuffWithDom);
+  chrome.tabs.sendMessage(tab.id, {text: 'text'}, doStuffWithDom);
 });
