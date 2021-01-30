@@ -5,22 +5,28 @@
 //   changeColor.setAttribute('value', data.color);
 // });
 
-// window.onload = function(){
-// changeColor.onclick = function(element) {
-//   let color = element.target.value;
-//   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-//     chrome.tabs.executeScript(
-//       tabs[0].id,
-//       {code: 'document.body.style.backgroundColor = "' + color + '";'});
-//   });
-// };
-// }
-console.log("yooooo before function");
-function getAssignments() {
-  const assignments = document.getElementsByClassName("Xzp3fc")[0].getElementsByTagNmae('li');
-  
-  
+changeColor.onclick = function(element) {
+  let color = element.target.value;
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.executeScript(
+      tabs[0].id,
+      {code: 'document.body.style.backgroundColor = "' + color + '";'});
+  });
 };
 
-//getAssignments();x
-window.addEventListener("load", getAssignments);
+let changeFont = document.getElementById('changeFont');
+
+chrome.storage.sync.get('font', function(data) {
+  changeFont.style.fontFamily = data.font;
+  changeFont.setAttribute('value', data.font);
+});
+
+changeFont.onclick = function(element) {
+  let font = element.target.value;
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.executeScript(
+      tabs[0].id,
+      {code: 'document.body.style.fontFamily = "' + font + '";'});
+  });
+};
+
