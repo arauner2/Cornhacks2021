@@ -10,17 +10,20 @@
     </style>
   </head>
   <body>
-    <form action="/action_page.php">
-      <label for="cars">Choose a color:</label>
-      <select name="cars" id="changeColor">
-        <optgroup label="Color Options">
-          <option value="#000080">Blue</option>
-          <option value="#00FF00">Green</option>
-        </optgroup>
+    <!-- <form action="/action_page.php"> -->
+      <label for="Options">Customize your page:</label>
+      <select name="Color" id="changeColor">
+        <option value="#FFFFFF">Default</option>
+        <option value="#000080">Blue</option>
+        <option value="#00FF00">Green</option>
+      </select>
+      <select name="Font" id="changeFont">
+        <option value="Helvetica">Helvetica</option>
+        <option value="Calibri">Calibri</option>
+        <option value="Arial">Arial</option>
       </select>
       <br><br>
-      <input type="submit" value="Submit">
-    </form>
+    <!-- </form> -->
     <script src="popup.js"></script>
     
   </body>
