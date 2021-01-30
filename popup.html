@@ -10,7 +10,17 @@
     </style>
   </head>
   <body>
-    <button id="changeColor"></button>
+    <form action="/action_page.php">
+      <label for="cars">Choose a color:</label>
+      <select name="cars" id="changeColor">
+        <optgroup label="Color Options">
+          <option value="#000080">Blue</option>
+          <option value="#00FF00">Green</option>
+        </optgroup>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
     <script src="popup.js"></script>
     
   </body>
