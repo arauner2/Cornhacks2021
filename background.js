@@ -12,3 +12,12 @@ chrome.runtime.onInstalled.addListener(function() {
     }]);
   });
 });
+
+function doStuffWithDom(domContent) {
+  console.log('I received the following DOM content:\n' + domContent);
+}
+
+chrome.browserAction.onClicked.addListener(function (tab) {
+  // ...check the URL of the active tab against our pattern and...
+    chrome.tabs.sendMessage(tab.id, {text: 'text'}, doStuffWithDom);
+});
