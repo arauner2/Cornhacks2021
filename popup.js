@@ -25,10 +25,14 @@ getPoints.addEventListener('click', () => {
 changeColor.addEventListener('change', function(element) {
   console.log("BG COLOR");
   let color = element.target.value;
+  let code2 = 'document.body.style.color =' +"'white';"
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
       tabs[0].id,
       {code: 'document.body.style.backgroundColor = "' + color + '";'});
+    chrome.tabs.executeScript(
+      tabs[0].id,
+      {code: code2});
   });
 }, false);
 
@@ -61,7 +65,6 @@ changeImage.addEventListener('change', function(element) {
   console.log("IMAGE");
   let image = element.target.value;
   let code = 'document.body.style.backgroundImage = "' + "url('" + chrome.runtime.getURL(image) + "')\";"
-  console.log(code);
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
       tabs[0].id,
