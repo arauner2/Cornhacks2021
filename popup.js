@@ -5,6 +5,23 @@ let changeColor = document.getElementById('changeColor');
 //   changeColor.setAttribute('value', data.color);
 // });
 
+let getPoints = document.getElementById("getPoints");
+getPoints.addEventListener('click', () => {
+
+  function modifyDOM() {
+      //You can play with your DOM here or check URL against your regex
+      return document.body.innerHTML;
+  }
+
+  //We have permission to access the activeTab, so we can call chrome.tabs.executeScript:
+  chrome.tabs.executeScript({
+      code: '(' + modifyDOM + ')();' //argument here is a string but function.toString() returns function's code
+  }, (results) => {
+      const numOfCompletedAss = results[0].split("oC328b").length - 1;
+      document.getElementById("points").innerText = "Points: " + numOfCompletedAss*10;
+  });
+});
+
 changeColor.addEventListener('change', function(element) {
   console.log("BG COLOR");
   let color = element.target.value;
