@@ -1,3 +1,4 @@
+let level = 0;
 function getLevels(score) {
   if (score < 10) {
     return 0;
@@ -24,6 +25,7 @@ function getLevels(score) {
   }
   return 0;
 }
+
 
 window.onload = function () {
   chrome.storage.sync.get("points", function (result) {
@@ -55,7 +57,12 @@ window.onload = function () {
 };
 
 // Background Color
-let changeColor = document.getElementById("changeColor");
+
+
+
+
+
+Color = document.getElementById("changeColor");
 // chrome.storage.sync.get('color', function(data) {
 //   changeColor.style.backgroundColor = data.color;
 //   changeColor.setAttribute('value', data.color);
@@ -191,15 +198,18 @@ var fonts = [
   ["Courier New", "Courier New"],
 ];
 var images = [
-  ["Default", ""],
-  ["Alien", "images/alien.png"],
-  ["Basketball", "images/basketball.png"],
-  ["Car", "images/car.png"],
-  ["Dinosaur", "images/dinosaur.png"],
-  ["Duck", "images/duck.png"],
-  ["Guitar", "images/guitar.png"],
-  ["Pokemon", "images/pokemon.png"],
-  ["Skateboard", "images/skateboard.png"],
-  ["Tree", "images/tree.png"],
-  ["Unicorn", "images/unicorn.png"],
-];
+  ['Corn', 'images/corn.png'],
+  ['Pikachu', 'images/pikachu.png'],
+  ['Guitar', 'images/guitar.png'],
+  ['Dog', 'images/dog.png'],
+  ['Duck', 'images/duck.png'],
+  ['Dinosaur', 'images/dinosaur.png'],
+  ['Tree', 'images/tree.png'],
+  ['Alien', 'images/alien.png'],
+  ['Car', 'images/car.png'],
+  ['Pokemon', 'images/pokemon.png'],
+  ['Skateboard', 'images/skateboard.png'],
+  ['Tree', 'images/tree.png'],
+  ['Unicorn', 'images/unicorn.png']
+]
+
