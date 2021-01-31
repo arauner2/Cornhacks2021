@@ -58,10 +58,6 @@ window.onload = function () {
 
 // Background Color
 
-
-
-
-
 Color = document.getElementById("changeColor");
 // chrome.storage.sync.get('color', function(data) {
 //   changeColor.style.backgroundColor = data.color;
@@ -175,7 +171,7 @@ changeImage.addEventListener(
 var colors = [
   ['#FFFFFF', 'Default'],
   ['#40E0D0', 'Blue'],
-  ['#6B8E23', 'Green'], 
+  ['#B2FFB2', 'Green'], 
   ['#FFD700', 'Yellow'],
   ['#B22222', 'Red' ],
   ['#DA70D6', 'Purple'],
@@ -187,15 +183,15 @@ var colors = [
 ];
 
 var fonts = [
-  ["Helvetica", "Helvetica"],
-  ["Calibri", "Calibri"],
-  ["Arial", "Arial"],
+  ["Tahoma", "Tahoma"],
+  ["Brush Script MT", "Brush Script MT"],
+  ["Courier New", "Courier New"],
   ["Georgia", "Georgia"],
   ["Garamond", "Garamond"],
   ["Verdana", "Verdana"],
   ["Tahoma", "Tahoma"],
   ["Times New Roman", "Times New Roman"],
-  ["Courier New", "Courier New"],
+  ["Arial", "Arial"],
 ];
 var images = [
   ['Corn', 'images/corn.png'],
