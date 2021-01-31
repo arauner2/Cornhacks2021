@@ -58,15 +58,15 @@ changeImage.addEventListener('change', function(element) {
 
 var colors = [
   ['#FFFFFF', 'Default'],
-  ['#000080', 'Blue'],
-  ['#00FF00', 'Green'], 
-  ['#DFFF00', 'Yellow'],
-  ['#FF0000', 'Red'],
-  ['#FF00FF', 'Fuchsia'],
-  ['#C0C0C0', 'Maroon'],
-  ['#00FFFF', 'Aqua'], 
-  ['#000080', 'Navy'], 
-  ['#808000', 'Olive'],
+  ['#40E0D0', 'Blue'],
+  ['#6B8E23', 'Green'], 
+  ['#FFD700', 'Yellow'],
+  ['#B22222', 'Red' ],
+  ['#DA70D6', 'Purple'],
+  ['#800000', 'Dark Red'],
+  ['#C0C0C0', 'Silver'], 
+  ['#FFB6C1', 'Light Pink'], 
+  ['#D2691E', 'Chocolate'],
   ['#FF7F50', 'Peach']
 ]
 
