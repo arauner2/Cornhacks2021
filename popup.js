@@ -1,10 +1,5 @@
 // Background Color
 let changeColor = document.getElementById('changeColor');
-// chrome.storage.sync.get('color', function(data) {
-//   changeColor.style.backgroundColor = data.color;
-//   changeColor.setAttribute('value', data.color);
-// });
-
 changeColor.addEventListener('change', function(element) {
   console.log("BG COLOR");
   let color = element.target.value;
@@ -21,10 +16,6 @@ changeColor.addEventListener('change', function(element) {
 
 // Font Family
 let changeFont = document.getElementById('changeFont');
-// chrome.storage.sync.get('font', function(data) {
-//   changeFont.style.fontFamily = data.font;
-//   changeFont.setAttribute('value', data.font);
-// });
 changeFont.addEventListener('change', function(element) {
   console.log("FONT");
   let font = element.target.value;
@@ -38,12 +29,6 @@ changeFont.addEventListener('change', function(element) {
 //Background Image
 
 let changeImage = document.getElementById('changeImage');
-
-// chrome.storage.sync.get('font', function(data) {
-//   changeImage.style.backgroundImage = data.image;
-//   changeImage.setAttribute('value', data.image);
-// });
-
 changeImage.addEventListener('change', function(element) {
   console.log("IMAGE");
   let image = element.target.value;
@@ -68,7 +53,7 @@ var colors = [
   ['#FFB6C1', 'Light Pink'], 
   ['#D2691E', 'Chocolate'],
   ['#FF7F50', 'Peach']
-]
+];
 
 var fonts = [
   ['Helvetica', 'Helvetica'],
@@ -80,7 +65,8 @@ var fonts = [
   ['Tahoma', 'Tahoma'],
   ['Times New Roman', 'Times New Roman'],
   ['Courier New', 'Courier New']
-  ]
+  ];
+
 var images = [
   ['Alien', 'images/alien.png'],
   ['Basketball', 'images/basketball.png'],
@@ -92,7 +78,7 @@ var images = [
   ['Skateboard', 'images/skateboard.png'],
   ['Tree', 'images/tree.png'],
   ['Unicorn', 'images/unicorn.png']
-]
+];
 
 var assignments;
 let level = 6;
