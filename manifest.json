@@ -3,10 +3,6 @@
   "version": "1.0",
   "description": "Gamify completing assignments by letting students customize their Google Classroom page!",
   "permissions": ["activeTab", "<all_urls>", "declarativeContent", "storage", "tabs", "*://classroom.google.com/*"],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
   "web_accessible_resources": [
     "images/*.png",
     "images/7663041f-f147-4c63-b805-2441d15077f2_200x200.png"
