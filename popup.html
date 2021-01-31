@@ -4,8 +4,11 @@
     <style>
       body {
         font-family: 'Copperplate', Tahoma, Verdana, sans-serif;
-        height: 400px;
+        height: 440px;
         width: 300px;
+        border: #333333 5px solid;
+        margin: 0;
+        padding: 10px;
       }
       button {
         outline: none;
@@ -20,6 +23,21 @@
         font-style: 'oblique';
         font-size: '16px';
       }
+
+      #getPoints {
+        background-color: cornflowerblue;
+        color: white;
+        padding: 10px;
+        border: none;
+        margin-bottom: 5px;
+      }
+
+      select {
+        padding: 5px;
+        margin-top: 5px;
+        width: 100px;
+      }
+
     </style>
     <script type="text/javascript" src = "scores.js"></script>
   </head>
@@ -46,6 +64,7 @@
       </select>
       <br><br>
       <button id="getPoints">Update Points</button>
+      <aside>To update your points, make sure you are on the Classwork page.</aside>
     <script src="popup.js"></script>
   </body>
 </html>
