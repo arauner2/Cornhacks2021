@@ -1,4 +1,4 @@
-let level = 0;
+// let level = 0;
 
 function getLevels(score){
   if (score<10){
@@ -27,6 +27,7 @@ function getLevels(score){
   return 0;
 }
 
+let level = 10;
 // Background Color
 let changeColor = document.getElementById('changeColor');
 // chrome.storage.sync.get('color', function(data) {
@@ -138,12 +139,15 @@ var fonts = [
   ['Courier New', 'Courier New']
   ]
 var images = [
-  ['Alien', 'images/alien.png'],
-  ['Basketball', 'images/basketball.png'],
-  ['Car', 'images/car.png'],
-  ['Dinosaur', 'images/dinosaur.png'],
-  ['Duck', 'images/duck.png'],
+  ['Corn', 'images/corn.png'],
+  ['Pikachu', 'images/pikachu.png'],
   ['Guitar', 'images/guitar.png'],
+  ['Dog', 'images/dog.png'],
+  ['Duck', 'images/duck.png'],
+  ['Dinosaur', 'images/dinosaur.png'],
+  ['Tree', 'images/tree.png'],
+  ['Alien', 'images/alien.png'],
+  ['Car', 'images/car.png'],
   ['Pokemon', 'images/pokemon.png'],
   ['Skateboard', 'images/skateboard.png'],
   ['Tree', 'images/tree.png'],
