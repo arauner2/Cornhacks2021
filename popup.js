@@ -1,5 +1,61 @@
+let level = 0;
+
+function getLevels(score){
+  if (score<10){
+      return 0;
+  }else if  (score >=10 && score <50){
+      return 1;
+  }else if (score>=20 && score <100){
+      return 2;
+  }else if (score>=100 && score <150){
+      return 3;
+  }else if (score>=150 && score <200){
+      return 4;
+  }else if (score>=200 && score<250){
+      return 5;
+  }else if (score>=250 && score<300){
+      return 6;
+  }else if (score>=300 && score<350){
+      return 7;
+  }else if (score>=400 && score<450){
+      return 8;
+  }else if (Score>=450 && score<500){
+      return 9;
+  }else if (score>=500){
+      return 10;
+  }
+  return 0;
+}
+
 // Background Color
 let changeColor = document.getElementById('changeColor');
+let getPoints = document.getElementById("getPoints");
+getPoints.addEventListener('click', () => {
+
+  function modifyDOM() {
+      //You can play with your DOM here or check URL against your regex
+      return document.body.innerHTML;
+  }
+
+  //We have permission to access the activeTab, so we can call chrome.tabs.executeScript:
+  chrome.tabs.executeScript({
+      code: '(' + modifyDOM + ')();' //argument here is a string but function.toString() returns function's code
+  }, (results) => {
+      const numOfCompletedAss = (results[0].split("oC328b").length - 1)*10;
+      document.getElementById("points").innerText = "Points: " + numOfCompletedAss;
+      document.getElementById("level").innerText = "Level: " + getLevels(numOfCompletedAss);
+      level = getLevels(numOfCompletedAss);
+      for (let i = 0; i <= level; i++){
+        //Color
+        changeColor.options[changeColor.options.length] = new Option(colors[i][1], colors[i][0]);
+        //Font
+        changeFont.options[changeFont.options.length] = new Option(fonts[i][1], fonts[i][0]);
+        //Image
+        changeImage.options[changeImage.options.length] = new Option(images[i][0], images[i][1]);
+      }
+  });
+});
+
 changeColor.addEventListener('change', function(element) {
   console.log("BG COLOR");
   let color = element.target.value;
