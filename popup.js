@@ -5,13 +5,11 @@ let changeColor = document.getElementById('changeColor');
 //   changeColor.setAttribute('value', data.color);
 // });
 
-document.getElementById("test").addEventListener('click', () => {
-  console.log("Popup DOM fully loaded and parsed");
+let getPoints = document.getElementById("getPoints");
+getPoints.addEventListener('click', () => {
 
   function modifyDOM() {
       //You can play with your DOM here or check URL against your regex
-      console.log('Tab script:');
-      console.log(document.body);
       return document.body.innerHTML;
   }
 
@@ -19,10 +17,8 @@ document.getElementById("test").addEventListener('click', () => {
   chrome.tabs.executeScript({
       code: '(' + modifyDOM + ')();' //argument here is a string but function.toString() returns function's code
   }, (results) => {
-      const numOfOverallAss = results[0].split("</li>").length - 2;
       const numOfCompletedAss = results[0].split("oC328b").length - 1;
-      console.log(numOfOverallAss);
-      console.log(numOfCompletedAss);
+      document.getElementById("points").innerText = "Points: " + numOfCompletedAss*10;
   });
 });
 
