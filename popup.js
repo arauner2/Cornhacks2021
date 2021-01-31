@@ -43,7 +43,7 @@ let changeImage = document.getElementById('changeImage');
 changeImage.addEventListener('change', function(element) {
   console.log("IMAGE");
   let image = element.target.value;
-  let code = 'document.body.style.backgroundImage = "' + "url('" + image + "')\";"
+  let code = 'document.body.style.backgroundImage = "' + "url('" + chrome.runtime.getURL(image) + "')\";"
   console.log(code);
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
