@@ -26,14 +26,16 @@ function getLevels(score) {
   return 0;
 }
 
-
 window.onload = function () {
   chrome.storage.sync.get("points", function (result) {
-    if(result.points) document.getElementById("points").innerText = "Points: " + result.points || "";
+    if (result.points)
+      document.getElementById("points").innerText =
+        "Points: " + result.points || "";
   });
   chrome.storage.sync.get("level", function (result) {
     if (result.level) {
-      document.getElementById("level").innerText = "Level: " + result.level || "";
+      document.getElementById("level").innerText =
+        "Level: " + result.level || "";
       let level = result.level;
       for (let i = 0; i <= level; i++) {
         //Color
@@ -56,14 +58,7 @@ window.onload = function () {
   });
 };
 
-// Background Color
-
-Color = document.getElementById("changeColor");
-// chrome.storage.sync.get('color', function(data) {
-//   changeColor.style.backgroundColor = data.color;
-//   changeColor.setAttribute('value', data.color);
-// });
-
+// Points
 let getPoints = document.getElementById("getPoints");
 getPoints.addEventListener("click", () => {
   function modifyDOM() {
@@ -80,11 +75,10 @@ getPoints.addEventListener("click", () => {
       const numOfCompletedAss = (results[0].split("oC328b").length - 1) * 10;
       document.getElementById("points").innerText =
         "Points: " + numOfCompletedAss;
-      chrome.storage.sync.set({ "points": numOfCompletedAss });
+      chrome.storage.sync.set({ points: numOfCompletedAss });
       let level = getLevels(numOfCompletedAss);
-      document.getElementById("level").innerText =
-        "Level: " + level;
-      chrome.storage.sync.set({ "level": level });
+      document.getElementById("level").innerText = "Level: " + level;
+      chrome.storage.sync.set({ level: level });
       for (let i = 0; i <= level; i++) {
         //Color
         changeColor.options[changeColor.options.length] = new Option(
@@ -106,6 +100,8 @@ getPoints.addEventListener("click", () => {
   );
 });
 
+// Background Color
+let changeColor = document.getElementById("changeColor");
 changeColor.addEventListener(
   "change",
   function (element) {
@@ -124,10 +120,6 @@ changeColor.addEventListener(
 
 // Font Family
 let changeFont = document.getElementById("changeFont");
-// chrome.storage.sync.get('font', function(data) {
-//   changeFont.style.fontFamily = data.font;
-//   changeFont.setAttribute('value', data.font);
-// });
 changeFont.addEventListener(
   "change",
   function (element) {
@@ -143,14 +135,7 @@ changeFont.addEventListener(
 );
 
 //Background Image
-
 let changeImage = document.getElementById("changeImage");
-
-// chrome.storage.sync.get('font', function(data) {
-//   changeImage.style.backgroundImage = data.image;
-//   changeImage.setAttribute('value', data.image);
-// });
-
 changeImage.addEventListener(
   "change",
   function (element) {
@@ -169,17 +154,17 @@ changeImage.addEventListener(
 );
 
 var colors = [
-  ['#FFFFFF', 'Default'],
-  ['#40E0D0', 'Blue'],
-  ['#B2FFB2', 'Green'], 
-  ['#FFD700', 'Yellow'],
-  ['#B22222', 'Red' ],
-  ['#DA70D6', 'Purple'],
-  ['#800000', 'Dark Red'],
-  ['#C0C0C0', 'Silver'], 
-  ['#FFB6C1', 'Light Pink'], 
-  ['#D2691E', 'Chocolate'],
-  ['#FF7F50', 'Peach']
+  ["#FFFFFF", "Default"],
+  ["#40E0D0", "Blue"],
+  ["#B2FFB2", "Green"],
+  ["#FFD700", "Yellow"],
+  ["#B22222", "Red"],
+  ["#DA70D6", "Purple"],
+  ["#800000", "Dark Red"],
+  ["#C0C0C0", "Silver"],
+  ["#FFB6C1", "Light Pink"],
+  ["#D2691E", "Chocolate"],
+  ["#FF7F50", "Peach"],
 ];
 
 var fonts = [
@@ -194,18 +179,17 @@ var fonts = [
   ["Arial", "Arial"],
 ];
 var images = [
-  ['Corn', 'images/corn.png'],
-  ['Pikachu', 'images/pikachu.png'],
-  ['Guitar', 'images/guitar.png'],
-  ['Dog', 'images/dog.png'],
-  ['Duck', 'images/duck.png'],
-  ['Dinosaur', 'images/dinosaur.png'],
-  ['Tree', 'images/tree.png'],
-  ['Alien', 'images/alien.png'],
-  ['Car', 'images/car.png'],
-  ['Pokemon', 'images/pokemon.png'],
-  ['Skateboard', 'images/skateboard.png'],
-  ['Tree', 'images/tree.png'],
-  ['Unicorn', 'images/unicorn.png']
-]
-
+  ["Corn", "images/corn.png"],
+  ["Pikachu", "images/pikachu.png"],
+  ["Guitar", "images/guitar.png"],
+  ["Dog", "images/dog.png"],
+  ["Duck", "images/duck.png"],
+  ["Dinosaur", "images/dinosaur.png"],
+  ["Tree", "images/tree.png"],
+  ["Alien", "images/alien.png"],
+  ["Car", "images/car.png"],
+  ["Pokemon", "images/pokemon.png"],
+  ["Skateboard", "images/skateboard.png"],
+  ["Tree", "images/tree.png"],
+  ["Unicorn", "images/unicorn.png"],
+];
