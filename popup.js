@@ -5,7 +5,7 @@ function getLevels(score){
       return 0;
   }else if  (score >=10 && score <50){
       return 1;
-  }else if (score>=20 && score <100){
+  }else if (score>=50 && score <100){
       return 2;
   }else if (score>=100 && score <150){
       return 3;
@@ -19,7 +19,7 @@ function getLevels(score){
       return 7;
   }else if (score>=400 && score<450){
       return 8;
-  }else if (Score>=450 && score<500){
+  }else if (score>=450 && score<500){
       return 9;
   }else if (score>=500){
       return 10;
@@ -27,8 +27,6 @@ function getLevels(score){
   return 0;
 }
 
-// Background Color
-let changeColor = document.getElementById('changeColor');
 let getPoints = document.getElementById("getPoints");
 getPoints.addEventListener('click', () => {
 
@@ -56,6 +54,8 @@ getPoints.addEventListener('click', () => {
   });
 });
 
+// Background Color
+let changeColor = document.getElementById('changeColor');
 changeColor.addEventListener('change', function(element) {
   console.log("BG COLOR");
   let color = element.target.value;
@@ -124,6 +124,7 @@ var fonts = [
   ];
 
 var images = [
+  ['Default', ''],
   ['Alien', 'images/alien.png'],
   ['Basketball', 'images/basketball.png'],
   ['Car', 'images/car.png'],
@@ -135,16 +136,3 @@ var images = [
   ['Tree', 'images/tree.png'],
   ['Unicorn', 'images/unicorn.png']
 ];
-
-var assignments;
-let level = 6;
-
-for (let i = 0; i < level; i++){
-  //Color
-  changeColor.options[changeColor.options.length] = new Option(colors[i][1], colors[i][0]);
-  //Font
-  changeFont.options[changeFont.options.length] = new Option(fonts[i][1], fonts[i][0]);
-  //Image
-  changeImage.options[changeImage.options.length] = new Option(images[i][0], images[i][1]);
-}
-console.log(changeColor, changeFont, changeImage);
