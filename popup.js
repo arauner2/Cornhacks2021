@@ -37,26 +37,39 @@ window.onload = function () {
       document.getElementById("level").innerText =
         "Level: " + result.level || "";
       let level = result.level;
-      for (let i = 0; i <= level; i++) {
-        //Color
-        changeColor.options[changeColor.options.length] = new Option(
-          colors[i][1],
-          colors[i][0]
-        );
-        //Font
-        changeFont.options[changeFont.options.length] = new Option(
-          fonts[i][1],
-          fonts[i][0]
-        );
-        //Image
-        changeImage.options[changeImage.options.length] = new Option(
-          images[i][0],
-          images[i][1]
-        );
-      }
+      resetOptions(level);
     }
   });
 };
+
+  resetOptions = function(level) {
+  while (changeColor.options.length > 0) {
+    selectBox.remove(0);
+  }
+  while (changeFont.options.length > 0) {
+    selectBox.remove(0);
+  }
+  while (changeImage.options.length > 0) {
+    selectBox.remove(0);
+  }
+  for (let i = 0; i <= level; i++) {
+    //Color
+    changeColor.options[changeColor.options.length] = new Option(
+      colors[i][1],
+      colors[i][0]
+    );
+    //Font
+    changeFont.options[changeFont.options.length] = new Option(
+      fonts[i][1],
+      fonts[i][0]
+    );
+    //Image
+    changeImage.options[changeImage.options.length] = new Option(
+      images[i][0],
+      images[i][1]
+    );
+  }
+}
 
 // Points
 let getPoints = document.getElementById("getPoints");
@@ -79,23 +92,7 @@ getPoints.addEventListener("click", () => {
       let level = getLevels(numOfCompletedAss);
       document.getElementById("level").innerText = "Level: " + level;
       chrome.storage.sync.set({ level: level });
-      for (let i = 0; i <= level; i++) {
-        //Color
-        changeColor.options[changeColor.options.length] = new Option(
-          colors[i][1],
-          colors[i][0]
-        );
-        //Font
-        changeFont.options[changeFont.options.length] = new Option(
-          fonts[i][1],
-          fonts[i][0]
-        );
-        //Image
-        changeImage.options[changeImage.options.length] = new Option(
-          images[i][0],
-          images[i][1]
-        );
-      }
+      resetOptions(level);
     }
   );
 });
