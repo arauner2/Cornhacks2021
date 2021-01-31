@@ -43,6 +43,7 @@ getPoints.addEventListener('click', () => {
       document.getElementById("points").innerText = "Points: " + numOfCompletedAss;
       document.getElementById("level").innerText = "Level: " + getLevels(numOfCompletedAss);
       level = getLevels(numOfCompletedAss);
+      //console.log("Level: " + level);
       for (let i = 0; i <= level; i++){
         //Color
         changeColor.options[changeColor.options.length] = new Option(colors[i][1], colors[i][0]);

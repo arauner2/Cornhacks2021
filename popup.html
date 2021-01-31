@@ -3,14 +3,23 @@
   <head>
     <style>
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        height: 700px;
+        font-family: 'Copperplate', Tahoma, Verdana, sans-serif;
+        height: 400px;
         width: 300px;
       }
       button {
         outline: none;
       }
-      
+      label.smallLabel {
+        font-family: 'Copperplate';
+        font-style: 'oblique';
+        font-size: '12px';
+      }
+      label.bigLabel {
+        font-family: 'Copperplate';
+        font-style: 'oblique';
+        font-size: '16px';
+      }
     </style>
     <script type="text/javascript" src = "scores.js"></script>
   </head>
@@ -19,17 +28,26 @@
 
       <h3 id="points">Points:</h3>
       <h3 id="level">Level:</h3>
-      <label for="Options">Customize your page:</label>
+      <h3 id="bigLabel">Customize your page:</label>
+      <br>
+      <h4 id="smallLabel">Color:</label>
+      <br>
       <select name="Color" id="changeColor">
         <!-- <option value="#FFFFFF">Default</option>
         <option value="#000080">Blue</option>
         <option value="#00FF00">Green</option> -->
       </select>
+      <br>
+      <h4 id="smallLabel">Font:</label>
+      <br>
       <select name="Font" id="changeFont">
         <!-- <option value="Helvetica">Helvetica</option>
         <option value="Calibri">Calibri</option>
         <option value="Arial">Arial</option> -->
       </select>
+      <br>
+      <h4 id="smallLabel">Image:</label>
+      <br>
       <select name="Image" id="changeImage">
         <!-- <option value="images/alien.png">Alien</option>
         <option value="images/basketball.png">Basketball</option> -->
